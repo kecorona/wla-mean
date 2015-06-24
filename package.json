@@ -1,0 +1,32 @@
+{
+  "name": "hr",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "echo \"Run the correct js file to start the application\" && exit 0",
+    "populate": "node ./bin/populate_db"
+  },
+  "dependencies": {
+    "async": "0.9.0",
+    "colors": "^1.1.2",
+    "debug": "0.7.4",
+    "express": "4.2.0",
+    "mongoose": "3.8.11"
+  },
+  "description": "Human Resource Management Application",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kecorona/wla-mean.git"
+  },
+  "keywords": [
+    "wla",
+    "hr"
+  ],
+  "author": "Kristin Corona",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kecorona/wla-mean/issues"
+  },
+  "homepage": "https://github.com/kecorona/wla-mean#readme"
+}
