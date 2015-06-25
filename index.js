@@ -1,4 +1,5 @@
 var http = require('http');
+var memberService = require('./lib/members');
 
 http.createServer(function (req, res) {
 	// Parsed url to accomodate for parameters
@@ -17,16 +18,27 @@ http.createServer(function (req, res) {
 
 	if (_url = /^\/members$/i.exec(req.url)) {
 		// return a list of members
-		res.writeHead(200)
-		return res.end('member list');
-	} else if (_url = /^\/members$/i.exec(req.url)) {
+		memberService.getMembers(function (error, data) {
+			if (error) {
+				// send a 500 error
+			}
+			// send the data with a 200 status code
+		});
+	} else if (_url = /^\/members\/(\d+)$/i.exec(req.url)) {
 		// find the member by id defined in route
-		res.writeHead(200);
-		return res.end('a single member');
+		memberService.getMember(_url[1], function (error, data) {
+			if (error) {
+				// send a 500 error
+			}
+			if (!data) {
+				// send a 404 error
+			}
+
+			// send the data with a 200 status code
+		});
 	} else {
 		// attempt to send static file
-		res.writeHead(200);
-		res.end('static file maybe')
+		// otherwise, send a 404
 	}
 }).listen(1337, '127.0.0.1');
 
