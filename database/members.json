@@ -1,0 +1,29 @@
+[
+	{
+		"id": "000001",
+		"name": {
+			"first": "Montgomery",
+			"last": "Burns"
+		},
+		"address": {
+			"lines": ["1000 Mammon Lane", "(Mammon Lane)"],
+			"city": "Springfield",
+			"state": "IL",
+			"zip": 22617
+		}
+	},
+	{
+		"id": "000002",
+		"name": {
+			"first": "Homer",
+			"last": "Simpson"
+		},
+		"address": {
+			"lines": ["742 Evergreen Terrace", "(Evergreen Terrace)"],
+			"city": "Springfield",
+			"state": "IL",
+			"zip": 22617
+		}
+	},
+
+]
