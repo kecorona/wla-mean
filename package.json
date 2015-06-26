@@ -6,11 +6,12 @@
     "populate": "node ./bin/populate_db"
   },
   "dependencies": {
-    "async": "0.9.0",
+    "async": "^0.9.2",
     "colors": "^1.1.2",
     "debug": "0.7.4",
     "express": "4.2.0",
-    "mongoose": "3.8.11"
+    "mongoose": "^3.9.7",
+    "mongoose-post-find": "0.0.2"
   },
   "description": "Human Resource Management Application",
   "main": "index.js",
