@@ -12,14 +12,14 @@ var BusinessLineSchema = new Schema({
 	},
 });
 
-function _attachMembers (Member, result, callback) {
+function _attachBLMembers (Member, result, callback) {
 	Member.find({
 		team: result._id
 	}, function (error, members) {
 		if (error) {
 			return callback(error);
 		}
-		result._members = members;
+		result.blmembers = members;
 		callback(null, result)
 	});
 }
@@ -30,7 +30,7 @@ BusinessLineSchema.plugin(postFind, {
 		var Member = mongoose.model('Member');
 
 		async.each(result, function (item, callback) {
-			_attachMembers(Member, item, callback);
+			_attachBLMembers(Member, item, callback);
 		}, function (error) {
 			if (error) {
 				return callback(error);
@@ -42,7 +42,7 @@ BusinessLineSchema.plugin(postFind, {
 	findOne: function (result, callback) {
 		var Member = mongoose.model('Member');
 
-		_attachMembers(Member, result, callback);
+		_attachBLMembers(Member, result, callback);
 	}
 });
 
