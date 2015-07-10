@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var EmployeeSchema = new Schema({
+var MemberSchema = new Schema({
 	id: {
 		type: String,
 		required: true,

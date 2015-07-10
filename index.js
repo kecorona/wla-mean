@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var db = mongoose.connection;
+var db = require('/.lib/connection')
 var dbUrl = 'mongodb://admin:admin@ds041841.mongolab.com:41841/heroku_3pmxr98k';
 
 var BusinessLineSchema = new Schema ({
